@@ -1,3 +1,6 @@
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -14,23 +17,25 @@ public class spel {
 	static Map<String, ArrayList<Integer>> leaderboard = new HashMap<String, ArrayList<Integer>>();
 
 	public static void main(String[] args) {
-		
+
 		hemligttal = (int) (Math.random() * 10) + 1;
 		System.out.println("Skriv ditt namn");
 		playerName = input.next();
-		if(!leaderboard.containsKey(playerName))
-			leaderboard.put(playerName, new ArrayList<Integer>());		System.out.println("Gissa talet i mellan 1-10");
+		if (!leaderboard.containsKey(playerName))
+			leaderboard.put(playerName, new ArrayList<Integer>());
+		System.out.println("Gissa talet i mellan 1-10");
 		start();
-		System.out.println("leaderboard: " + playerName + " " + count);
 
-		while (exit) {			
-			restart = input.nextLine();
+		while (exit) {
+			count = 0;
+			System.out.println("Skriv restart om du vill köra igen");
+			restart = input.next();
 			if (restart.equals("restart")) {
-				
+
 				hemligttal = (int) (Math.random() * 10) + 1;
 				System.out.println("Skriv ditt namn");
 				playerName = input.next();
-				if(!leaderboard.containsKey(playerName))
+				if (!leaderboard.containsKey(playerName))
 					leaderboard.put(playerName, new ArrayList<Integer>());
 				System.out.println("Gissa talet i mellan 1-10");
 				exit = false;
@@ -48,12 +53,12 @@ public class spel {
 				System.out.println("Grattis det tog dig " + count + " att gissa ett tal din looser!!!");
 				ArrayList<Integer> list = leaderboard.get(playerName);
 				list.add(count);
-				
-				System.out.println(playerName + " leaderboard");
-				for(int i = 0; i < list.size(); i++) {
+
+				System.out.println("Score för " + playerName + ";");
+				for (int i = 0; i < list.size(); i++) {
 					System.out.println(list.get(i));
 				}
-				
+
 				exit = true;
 			} else if (Gissning < hemligttal) {
 				System.out.println("HAHA MISS, Testa lite mer nåsta gång din fjolla");
@@ -62,5 +67,4 @@ public class spel {
 			}
 		}
 	}
-
 }
