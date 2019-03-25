@@ -11,5 +11,7 @@
 	<classpathentry kind="src" path="v49"/>
 	<classpathentry kind="src" path="v2"/>
 	<classpathentry kind="src" path="v8"/>
+	<classpathentry kind="src" path="v10"/>
+	<classpathentry kind="src" path="v11"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
