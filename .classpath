@@ -13,5 +13,7 @@
 	<classpathentry kind="src" path="v8"/>
 	<classpathentry kind="src" path="v10"/>
 	<classpathentry kind="src" path="v11"/>
+	<classpathentry kind="src" path="v14"/>
+	<classpathentry kind="lib" path="C:/Users/usr/Downloads/HangmanConsoleWindow.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
